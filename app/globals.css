@@ -134,3 +134,20 @@ body {
 .animate-pulse-subtle {
   animation: pulse-subtle 7s ease-in-out infinite;
 }
+
+/* Custom Cursor Progressive Enhancement (fine-pointer / mouse & hybrid devices) */
+@media (pointer: fine), (any-pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: none !important;
+  }
+
+  /* Preserve native I-beam cursor for all inputs, textareas, and select elements */
+  html.custom-cursor-active input,
+  html.custom-cursor-active textarea,
+  html.custom-cursor-active select,
+  html.custom-cursor-active [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+

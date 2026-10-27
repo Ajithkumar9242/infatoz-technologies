@@ -70,6 +70,7 @@ export const metadata: Metadata = {
 };
 
 import { CalendlyProvider } from "@/components/providers/CalendlyProvider";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 
 export default function RootLayout({
   children,
@@ -82,6 +83,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
+        <CustomCursor />
         <CalendlyProvider>{children}</CalendlyProvider>
       </body>
     </html>

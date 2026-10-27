@@ -25,7 +25,7 @@ export const WhyChooseSection: React.FC = () => {
               className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 hover:text-white bg-white hover:bg-slate-900 border border-slate-300 hover:border-slate-900 px-6 py-3 rounded-sm shadow-sm transition-all"
             >
               <Play className="w-4 h-4 fill-current text-blue-600" />
-              <span>Watch Video (1:45)</span>
+              <span>Watch Video </span>
             </a>
           </div>
         </div>

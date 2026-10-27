@@ -112,4 +112,8 @@ export const navigationData: NavMenu[] = [
     title: "Careers",
     href: "#contact",
   },
+  {
+    title: "Contact",
+    href: "#contact",
+  },
 ];

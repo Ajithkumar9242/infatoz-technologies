@@ -29,6 +29,7 @@ export const InfatozLogo: React.FC<InfatozLogoProps> = ({
           width={640}
           height={640}
           priority={priority}
+          unoptimized
           className="w-full h-full object-contain"
         />
       </div>
