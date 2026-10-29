@@ -53,27 +53,54 @@ const HERO_SLIDES: HeroSlide[] = [
   },
 ];
 
+const subscribeReducedMotion = (callback: () => void) => {
+  if (typeof window === "undefined") return () => {};
+  const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mq.addEventListener("change", callback);
+  return () => mq.removeEventListener("change", callback);
+};
+
+const getReducedMotionSnapshot = () => {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+};
+
+const getReducedMotionServerSnapshot = () => false;
+
 export const HeroSection: React.FC = () => {
   const { openCalendly } = useCalendly();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
+  const [hasKeyboardFocus, setHasKeyboardFocus] = useState(false);
+  const isKeyboardNavRef = useRef(false);
 
   const prefersReducedMotion = useSyncExternalStore(
-    (callback) => {
-      if (typeof window === "undefined") return () => {};
-      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-      mq.addEventListener("change", callback);
-      return () => mq.removeEventListener("change", callback);
-    },
-    () => {
-      if (typeof window === "undefined") return false;
-      return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    },
-    () => false
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    getReducedMotionServerSnapshot
   );
 
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Distinguish keyboard navigation (Tab/Arrows) from pointer clicks
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Tab" || e.key.startsWith("Arrow")) {
+        isKeyboardNavRef.current = true;
+      }
+    };
+
+    const handlePointerDown = () => {
+      isKeyboardNavRef.current = false;
+    };
+
+    window.addEventListener("keydown", handleKeyDown, { capture: true });
+    window.addEventListener("pointerdown", handlePointerDown, { capture: true });
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown, { capture: true });
+      window.removeEventListener("pointerdown", handlePointerDown, { capture: true });
+    };
+  }, []);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
@@ -83,22 +110,37 @@ export const HeroSection: React.FC = () => {
     setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
   }, []);
 
-  // Autoplay
+  // Autoplay - advances every 7s when enabled, pauses on keyboard focus, explicit pause, or reduced-motion
   useEffect(() => {
-    if (!isPlaying || isHovered || prefersReducedMotion) return;
+    if (!isPlaying || hasKeyboardFocus || prefersReducedMotion) return;
     const timer = setInterval(() => {
       nextSlide();
     }, 7000);
     return () => clearInterval(timer);
-  }, [isPlaying, isHovered, prefersReducedMotion, nextSlide]);
+  }, [isPlaying, hasKeyboardFocus, prefersReducedMotion, nextSlide, currentSlide]);
 
   const slide = HERO_SLIDES[currentSlide];
+
+  const handleFocus = (e: React.FocusEvent) => {
+    const target = e.target as HTMLElement | null;
+    const isFocusVisible = target?.matches?.(":focus-visible");
+    if (isKeyboardNavRef.current || isFocusVisible) {
+      setHasKeyboardFocus(true);
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent) => {
+    const nextFocused = e.relatedTarget as Node | null;
+    if (!containerRef.current || !containerRef.current.contains(nextFocused)) {
+      setHasKeyboardFocus(false);
+    }
+  };
 
   return (
     <section
       ref={containerRef}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
       aria-roledescription="carousel"
       aria-label="Enterprise Capabilities Showcase"
       className="relative overflow-hidden bg-[#04091c] text-white min-h-[580px] sm:min-h-[640px] lg:min-h-[720px] flex items-center justify-between border-b border-slate-900"
@@ -161,7 +203,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Main Container */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full z-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-28 sm:py-20 lg:py-28 w-full z-10">
         <div className="max-w-3xl">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
@@ -185,7 +227,7 @@ export const HeroSection: React.FC = () => {
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
                   {slide.headline}
                 </h1>
-                <p className="text-2xl sm:text-3xl md:text-4xl font-normal text-slate-300 italic tracking-tight font-serif pt-1">
+                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-300 tracking-tight pt-1">
                   {slide.subtitle}
                 </p>
               </div>
@@ -258,7 +300,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Bottom Right Slide Controls (< and > arrows with slide number) */}
-      <div className="absolute right-6 sm:right-10 bottom-6 z-20 flex items-center gap-3 text-white/80">
+      <div className="absolute right-4 sm:right-10 bottom-4 sm:bottom-6 z-20 flex items-center gap-2 sm:gap-3 text-white/80 bg-[#04091c]/80 backdrop-blur-sm sm:bg-transparent px-2.5 py-1 sm:p-0 rounded-sm">
         <span className="text-xs font-mono tracking-widest text-slate-400">
           0{currentSlide + 1} / 0{HERO_SLIDES.length}
         </span>

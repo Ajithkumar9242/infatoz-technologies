@@ -58,7 +58,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
 
   return (
     <div
-      className="fixed inset-0 z-50 lg:hidden"
+      className="fixed inset-0 z-50 xl:hidden"
       role="dialog"
       aria-modal="true"
       aria-label="Mobile Navigation Menu"

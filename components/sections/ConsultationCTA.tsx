@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/Button";
-import { Calendar, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
 import { useCalendly } from "@/components/providers/CalendlyProvider";
 
 export const ConsultationCTA: React.FC = () => {
@@ -58,26 +58,6 @@ export const ConsultationCTA: React.FC = () => {
               <span>Let&apos;s Talk</span>
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-          </div>
-
-          {/* Verbatim Consultation Service Value Pillars */}
-          <div className="pt-10 border-t border-slate-800/80 grid grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-slate-300 text-left sm:text-center">
-            <div className="flex items-center sm:justify-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
-              <span>Business-Focused IT Planning</span>
-            </div>
-            <div className="flex items-center sm:justify-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
-              <span>In-Depth Technology Assessment</span>
-            </div>
-            <div className="flex items-center sm:justify-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
-              <span>Expert Analysis of IT Needs</span>
-            </div>
-            <div className="flex items-center sm:justify-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
-              <span>24/7 Availability & Ongoing Support</span>
-            </div>
           </div>
         </div>
       </div>

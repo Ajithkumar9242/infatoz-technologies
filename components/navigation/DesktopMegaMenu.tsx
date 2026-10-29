@@ -41,7 +41,7 @@ export const DesktopMegaMenu: React.FC = () => {
     <nav
       ref={containerRef}
       onBlur={handleBlur}
-      className="hidden lg:flex items-center gap-1 xl:gap-2"
+      className="flex items-center gap-1 xl:gap-2"
       aria-label="Main Navigation"
     >
       {navigationData.map((menu: NavMenu) => {
