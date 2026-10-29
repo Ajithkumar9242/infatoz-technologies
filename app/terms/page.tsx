@@ -3,10 +3,21 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ArrowLeft, FileText } from "lucide-react";
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/siteConfig";
 
-export const metadata = {
-  title: "Terms & Conditions | Infatoz Technologies",
-  description: "Terms and conditions governing the use of Infatoz Technologies websites and digital services.",
+export const metadata: Metadata = {
+  title: "Terms & Conditions",
+  description: "Terms and conditions governing professional engagements, website usage, and digital services with Infatoz Technologies.",
+  alternates: {
+    canonical: "/terms",
+  },
+  openGraph: {
+    title: "Terms & Conditions | Infatoz Technologies",
+    description: "Terms and conditions governing professional engagements, website usage, and digital services with Infatoz Technologies.",
+    url: `${siteConfig.url}/terms`,
+    type: "website",
+  },
 };
 
 export default function TermsPage() {

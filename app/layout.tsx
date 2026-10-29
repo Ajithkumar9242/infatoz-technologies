@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { siteConfig } from "@/lib/siteConfig";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { CalendlyProvider } from "@/components/providers/CalendlyProvider";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,51 +17,67 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Infatoz Technologies — Idea to Impact | Enterprise Software, Cloud & AI",
-  description:
-    "We deliver secure, scalable, and future-ready digital solutions tailored to your business needs. Custom web applications, mobile development, ERP software, and cloud maintenance.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "Infatoz Technologies — Idea to Impact | Enterprise Software, Cloud & AI",
+    template: "%s | Infatoz Technologies",
+  },
+  description: siteConfig.description,
   keywords: [
     "Infatoz Technologies",
     "Enterprise Software Development",
     "Custom Web Applications",
     "Mobile App Development",
     "ERP Software",
-    "Attendance Master",
+    "Attendance Master Suite",
     "Cloud Application Maintenance",
     "AI Automation",
     "Bengaluru Software Company",
-    "Udupi IT Services",
+    "Kundapura IT Services",
   ],
-  authors: [{ name: "Infatoz Technologies" }],
-  creator: "Infatoz Technologies",
-  publisher: "Infatoz Technologies",
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.legalName,
   formatDetection: {
     email: true,
     address: true,
     telephone: true,
   },
-  metadataBase: new URL("https://infatoz.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Infatoz Technologies — Idea to Impact | Driving Business Growth Through Technology",
-    description:
-      "We deliver secure, scalable, and future-ready digital solutions tailored to your business needs.",
-    url: "https://infatoz.com",
-    siteName: "Infatoz Technologies",
-    locale: "en_US",
+    title: "Infatoz Technologies — Idea to Impact | Enterprise Software, Cloud & AI",
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
     type: "website",
+    images: [
+      {
+        url: siteConfig.iconUrl,
+        width: 640,
+        height: 640,
+        alt: `${siteConfig.name} - ${siteConfig.slogan}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Infatoz Technologies — Enterprise Digital Engineering",
-    description:
-      "Delivering secure, scalable, and future-ready digital solutions tailored to your business needs.",
+    title: "Infatoz Technologies — Idea to Impact | Enterprise Software, Cloud & AI",
+    description: siteConfig.description,
+    images: [siteConfig.iconUrl],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: [
@@ -69,9 +89,6 @@ export const metadata: Metadata = {
   },
 };
 
-import { CalendlyProvider } from "@/components/providers/CalendlyProvider";
-import { CustomCursor } from "@/components/ui/CustomCursor";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -82,6 +99,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <JsonLd />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
         <CustomCursor />
         <CalendlyProvider>{children}</CalendlyProvider>
@@ -89,4 +109,3 @@ export default function RootLayout({
     </html>
   );
 }
-

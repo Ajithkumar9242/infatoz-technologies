@@ -3,10 +3,21 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ArrowLeft, Shield } from "lucide-react";
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/siteConfig";
 
-export const metadata = {
-  title: "Privacy Policy | Infatoz Technologies",
-  description: "Information regarding privacy, data protection, and governance at Infatoz Technologies.",
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Privacy policy, data protection standards, and client confidentiality governance at Infatoz Technologies.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Infatoz Technologies",
+    description: "Privacy policy, data protection standards, and client confidentiality governance at Infatoz Technologies.",
+    url: `${siteConfig.url}/privacy`,
+    type: "website",
+  },
 };
 
 export default function PrivacyPage() {
