@@ -27,7 +27,7 @@ export const ServicesTicker: React.FC = () => {
   return (
     <section
       aria-label="Capabilities Ticker"
-      className="relative w-full max-w-full overflow-hidden bg-slate-900 border-b border-slate-800 py-3.5 select-none"
+      className="relative w-full max-w-full overflow-hidden bg-slate-50 border-b border-slate-200/90 py-3.5 select-none"
     >
       <span className="sr-only">
         Core Capabilities: Custom Web Applications, Cloud Infrastructure, Enterprise ERP, Mobile Apps, AI & Machine Learning, Cybersecurity, UI/UX Design, Microservices, 24/7 Managed IT.
@@ -35,11 +35,11 @@ export const ServicesTicker: React.FC = () => {
 
       {/* Left/Right Gradient Fades */}
       <div
-        className="absolute left-0 inset-y-0 w-12 sm:w-24 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none"
+        className="absolute left-0 inset-y-0 w-12 sm:w-24 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute right-0 inset-y-0 w-12 sm:w-24 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none"
+        className="absolute right-0 inset-y-0 w-12 sm:w-24 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"
         aria-hidden="true"
       />
 
@@ -52,13 +52,13 @@ export const ServicesTicker: React.FC = () => {
             return (
               <div
                 key={`set1-${idx}`}
-                className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+                className="flex items-center gap-2.5 text-xs sm:text-sm font-bold text-slate-800 hover:text-blue-600 transition-colors"
               >
-                <span className="p-1 rounded-md bg-blue-500/10 text-sky-400">
+                <span className="p-1 rounded-md bg-blue-50 text-blue-600 border border-blue-100">
                   <Icon className="w-3.5 h-3.5" />
                 </span>
                 <span>{item.label}</span>
-                <span className="text-slate-600 font-bold ml-4">·</span>
+                <span className="text-slate-300 font-bold ml-4">·</span>
               </div>
             );
           })}
@@ -71,13 +71,13 @@ export const ServicesTicker: React.FC = () => {
             return (
               <div
                 key={`set2-${idx}`}
-                className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+                className="flex items-center gap-2.5 text-xs sm:text-sm font-bold text-slate-800 hover:text-blue-600 transition-colors"
               >
-                <span className="p-1 rounded-md bg-blue-500/10 text-sky-400">
+                <span className="p-1 rounded-md bg-blue-50 text-blue-600 border border-blue-100">
                   <Icon className="w-3.5 h-3.5" />
                 </span>
                 <span>{item.label}</span>
-                <span className="text-slate-600 font-bold ml-4">·</span>
+                <span className="text-slate-300 font-bold ml-4">·</span>
               </div>
             );
           })}

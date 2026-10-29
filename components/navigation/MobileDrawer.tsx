@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { navigationData } from "@/content/navigationData";
-import { X, ChevronDown, Phone, Mail, Calendar, ArrowRight } from "lucide-react";
+import { X, ChevronDown, Calendar } from "lucide-react";
 import { InfatozLogo } from "@/components/ui/InfatozLogo";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -17,12 +17,7 @@ import { useCalendly } from "@/components/providers/CalendlyProvider";
 
 export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
   const { openCalendly } = useCalendly();
-  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    "What We Do": true,
-  });
-  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({
-    "Digital Development": true,
-  });
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
   const drawerRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -30,7 +25,6 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
-      // Focus the close button when opened
       setTimeout(() => {
         closeButtonRef.current?.focus();
       }, 50);
@@ -42,36 +36,11 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
     };
   }, [isOpen]);
 
-  // Handle ESC and Tab key cycling (Accessible Focus Trap)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isOpen) return;
-
       if (e.key === "Escape") {
         onClose();
-        return;
-      }
-
-      if (e.key === "Tab" && drawerRef.current) {
-        const focusables = drawerRef.current.querySelectorAll<HTMLElement>(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        );
-        const focusableArr = Array.from(focusables).filter(
-          (el) => !el.hasAttribute("disabled") && el.offsetParent !== null
-        );
-
-        if (focusableArr.length === 0) return;
-
-        const first = focusableArr[0];
-        const last = focusableArr[focusableArr.length - 1];
-
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -82,13 +51,6 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
     setExpandedSections((prev) => ({
       ...prev,
       [title]: !prev[title],
-    }));
-  };
-
-  const toggleGroup = (groupTitle: string) => {
-    setExpandedGroups((prev) => ({
-      ...prev,
-      [groupTitle]: !prev[groupTitle],
     }));
   };
 
@@ -113,7 +75,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
         ref={drawerRef}
         className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl flex flex-col z-50 animate-in slide-in-from-right duration-200"
       >
-        {/* Top Header */}
+        {/* Top Header matching Tech Mahindra Mobile */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
           <Link
             href="/"
@@ -124,176 +86,126 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
             <InfatozLogo variant="dark" />
           </Link>
 
-          <button
-            ref={closeButtonRef}
-            type="button"
-            onClick={onClose}
-            aria-label="Close navigation menu"
-            className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 cursor-pointer"
-          >
-            <X className="w-6 h-6" />
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                onClose();
+                const el = document.getElementById("services");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              aria-label="Search Capabilities"
+              className="p-2 text-slate-700 hover:text-blue-600 cursor-pointer"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
+
+            <button
+              ref={closeButtonRef}
+              type="button"
+              onClick={onClose}
+              aria-label="Close navigation menu"
+              className="p-2 text-slate-700 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 cursor-pointer"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
         </div>
 
         {/* Scrollable Navigation List */}
-        <div className="flex-1 overflow-y-auto px-6 py-4 space-y-3">
+        <div className="flex-1 overflow-y-auto px-6 py-2 divide-y divide-slate-100">
           {navigationData.map((menu) => {
             const hasGroups = menu.groups && menu.groups.length > 0;
-            const isExpanded = expandedSections[menu.title];
+            const isExpanded = !!expandedSections[menu.title];
 
             if (!hasGroups) {
               return (
-                <div key={menu.title} className="py-1">
+                <div key={menu.title} className="py-3">
                   <a
                     href={menu.href || "#"}
                     onClick={onClose}
-                    className="flex items-center min-h-[44px] text-base font-semibold text-slate-800 hover:text-blue-600 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
+                    className="flex items-center justify-between text-sm font-extrabold uppercase tracking-wider text-slate-900 hover:text-blue-600 py-1 transition-colors"
                   >
-                    {menu.title}
+                    <span>{menu.title}</span>
                   </a>
                 </div>
               );
             }
 
             return (
-              <div key={menu.title} className="border-b border-slate-100 pb-2">
-                {/* Level 1 Navigation Accordion Header */}
+              <div key={menu.title} className="py-3">
                 <button
                   type="button"
                   onClick={() => toggleSection(menu.title)}
                   aria-expanded={isExpanded}
-                  className="w-full flex items-center justify-between min-h-[44px] text-base font-bold text-slate-900 py-2 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded cursor-pointer"
+                  className="w-full flex items-center justify-between text-sm font-extrabold uppercase tracking-wider text-slate-900 hover:text-blue-600 py-1 text-left cursor-pointer"
                 >
-                  <span className="flex items-center gap-2">
-                    {menu.title}
-                    <span className="text-[11px] font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full">
-                      {menu.groups?.length || 0} Domains
-                    </span>
-                  </span>
+                  <span>{menu.title}</span>
                   <ChevronDown
                     className={cn(
                       "w-4 h-4 text-slate-400 transition-transform duration-200",
-                      isExpanded && "rotate-180 text-blue-600"
+                      isExpanded ? "rotate-180 text-blue-600" : "-rotate-90"
                     )}
                   />
                 </button>
 
-                {/* Level 2 Categories (Nested Accordion) */}
                 {isExpanded && (
-                  <div className="pl-2 pr-1 pt-2 pb-3 space-y-2">
-                    {menu.groups?.map((group) => {
-                      const isGroupExpanded = !!expandedGroups[group.title];
-
-                      return (
-                        <div
-                          key={group.title}
-                          className="rounded-lg border border-slate-200/80 bg-slate-50/70 overflow-hidden"
-                        >
-                          {/* Level 2 Category Accordion Button */}
-                          <button
-                            type="button"
-                            onClick={() => toggleGroup(group.title)}
-                            aria-expanded={isGroupExpanded}
-                            className="w-full flex items-center justify-between min-h-[44px] px-3 py-2 text-left text-sm font-bold text-slate-900 hover:text-blue-600 hover:bg-slate-100/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 cursor-pointer"
-                          >
-                            <span className="flex items-center gap-2">
-                              <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                              {group.title}
-                            </span>
-                            <div className="flex items-center gap-2">
-                              <span className="text-[11px] text-slate-500 font-medium">
-                                {group.items.length}
-                              </span>
-                              <ChevronDown
-                                className={cn(
-                                  "w-3.5 h-3.5 text-slate-500 transition-transform duration-200",
-                                  isGroupExpanded && "rotate-180 text-blue-600"
-                                )}
-                              />
-                            </div>
-                          </button>
-
-                          {/* Level 3 Child Service Links */}
-                          {isGroupExpanded && (
-                            <div className="px-2 py-1.5 bg-white border-t border-slate-200/60">
-                              <ul className="space-y-0.5" role="list">
-                                {group.items.map((item) => (
-                                  <li key={item.label}>
-                                    <a
-                                      href={item.href}
-                                      onClick={onClose}
-                                      className="flex items-center justify-between min-h-[44px] py-2 px-2.5 text-sm text-slate-800 hover:text-blue-600 hover:bg-blue-50/60 font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md"
-                                    >
-                                      <div className="pr-2">
-                                        <div className="text-slate-900 font-semibold text-xs leading-snug">
-                                          {item.label}
-                                        </div>
-                                        {item.description && (
-                                          <div className="text-[11px] text-slate-500 font-normal leading-tight line-clamp-1">
-                                            {item.description}
-                                          </div>
-                                        )}
-                                      </div>
-                                      {item.badge ? (
-                                        <span className="shrink-0 text-[10px] font-bold text-sky-700 bg-sky-50 px-1.5 py-0.5 rounded border border-sky-100">
-                                          {item.badge}
-                                        </span>
-                                      ) : (
-                                        <ArrowRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                                      )}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
+                  <div className="pt-3 pb-2 pl-3 space-y-4 animate-in fade-in">
+                    {menu.groups?.map((group) => (
+                      <div key={group.title} className="space-y-2">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
+                          {group.title}
+                        </span>
+                        <ul className="space-y-2" role="list">
+                          {group.items.map((item) => (
+                            <li key={item.label}>
+                              <a
+                                href={item.href}
+                                onClick={onClose}
+                                className="block py-1 text-sm font-medium text-slate-700 hover:text-blue-600"
+                              >
+                                {item.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
             );
           })}
-
-          {/* Quick Contact & Consultation */}
-          <div className="pt-4 space-y-3">
-            <div className="text-xs font-bold text-slate-600 uppercase tracking-wider">
-              Direct Contact
-            </div>
-            <a
-              href="tel:+917019058591"
-              className="flex items-center gap-2.5 min-h-[44px] text-sm text-slate-800 hover:text-blue-600 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
-            >
-              <Phone className="w-4 h-4 text-blue-600 shrink-0" />
-              <span>+91 7019058591</span>
-            </a>
-            <a
-              href="mailto:info@infatoz.com"
-              className="flex items-center gap-2.5 min-h-[44px] text-sm text-slate-800 hover:text-blue-600 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
-            >
-              <Mail className="w-4 h-4 text-blue-600 shrink-0" />
-              <span>info@infatoz.com</span>
-            </a>
-          </div>
         </div>
 
         {/* Bottom Drawer Actions */}
-        <div className="p-6 border-t border-slate-100 bg-slate-50 space-y-2">
+        <div className="p-6 border-t border-slate-100 bg-white space-y-4">
           <Button
             onClick={() => {
               onClose();
               openCalendly();
             }}
-            className="w-full justify-center min-h-[44px]"
+            variant="primary"
+            className="w-full justify-center min-h-[48px] uppercase font-bold text-xs tracking-wider rounded-sm"
             size="lg"
           >
             <Calendar className="w-4 h-4 mr-2" />
-            Book Free Consultation
+            Get a Consultation
           </Button>
-          <p className="text-center text-xs text-slate-600 font-medium">
-            Secure, scalable, future-ready digital solutions.
-          </p>
+
+          {/* Region / Language Pill */}
+          <div className="flex items-center justify-between text-xs font-semibold text-slate-600 pt-2 border-t border-slate-100">
+            <span className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" strokeWidth="1.8" />
+                <path strokeWidth="1.8" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+              </svg>
+              <span>English (Global)</span>
+            </span>
+            <span className="text-slate-400">^</span>
+          </div>
         </div>
       </div>
     </div>

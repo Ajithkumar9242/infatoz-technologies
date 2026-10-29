@@ -1,18 +1,18 @@
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { OutcomesMetrics } from "@/components/sections/OutcomesMetrics";
 import { ServicesTicker } from "@/components/ui/ServicesTicker";
-import { TechEcosystem } from "@/components/sections/TechEcosystem";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
-import { OutcomesMetrics } from "@/components/sections/OutcomesMetrics";
+import { TechEcosystem } from "@/components/sections/TechEcosystem";
 import { WhyChooseSection } from "@/components/sections/WhyChooseSection";
 import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
 import { WorkflowSection } from "@/components/sections/WorkflowSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { BlogInsightsSection } from "@/components/sections/BlogInsightsSection";
 import { ConsultationCTA } from "@/components/sections/ConsultationCTA";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
-import { BlogInsightsSection } from "@/components/sections/BlogInsightsSection";
 
 export default function Home() {
   return (
@@ -33,41 +33,41 @@ export default function Home() {
         {/* 1. Hero Section — "Idea to Impact" */}
         <HeroSection />
 
-        {/* Capabilities Ticker Strip */}
-        <ServicesTicker />
-
-        {/* 2. Technology Ecosystem */}
-        <TechEcosystem />
-
-        {/* 3. About Infatoz & Operational Metrics */}
-        <AboutSection />
-
-        {/* 4. Core Capabilities & Services (10 Services) */}
-        <ServicesSection />
-
-        {/* 5. Business Outcomes & Quantitative Proof Points */}
+        {/* 2. Scale at Speed with Infatoz Technologies & Quantitative Proof Points */}
         <OutcomesMetrics />
 
-        {/* 6. Why Choose Infatoz (3 Strategic Pillars) */}
+        {/* 3. Capabilities Ticker Strip */}
+        <ServicesTicker />
+
+        {/* 4. About Infatoz & Operational Philosophy */}
+        <AboutSection />
+
+        {/* 5. Core Capabilities (Tech Mahindra Interactive Split Layout) */}
+        <ServicesSection />
+
+        {/* 6. Enterprise Technology Ecosystem & Cloud Partners */}
+        <TechEcosystem />
+
+        {/* 7. Industry Expertise & Embedded Company Showcase Video */}
         <WhyChooseSection />
 
-        {/* 7. Case Studies & Real Outcomes */}
+        {/* 8. Success Stories & Real Enterprise Outcomes */}
         <CaseStudiesSection />
 
-        {/* 8. 5-Step Engineering Workflow */}
+        {/* 9. 5-Step Delivery Engineering Framework */}
         <WorkflowSection />
 
-        {/* 9. Verified Customer Testimonials Carousel */}
+        {/* 10. Customer Speak (Verified Testimonials Carousel) */}
         <TestimonialsSection />
 
-        {/* 10. Consultation Climax CTA */}
+        {/* 11. Latest Thinking & Editorial Insights */}
+        <BlogInsightsSection />
+
+        {/* 12. Limitless Together Climax Consultation CTA */}
         <ConsultationCTA />
 
-        {/* 11. Dual Office Addresses & Interactive Form */}
+        {/* 13. Dual Office Addresses & Interactive Form */}
         <ContactFormSection />
-
-        {/* 12. Editorial Insights & Newsroom */}
-        <BlogInsightsSection />
       </main>
 
       {/* Complete Enterprise Footer */}

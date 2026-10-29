@@ -18,44 +18,7 @@ export interface NavMenu {
 
 export const navigationData: NavMenu[] = [
   {
-    title: "What We Do",
-    groups: [
-      {
-        title: "Digital Development",
-        items: [
-          { label: "Web Design & CMS", href: "#services" },
-          { label: "Web Applications", href: "#services" },
-          { label: "Mobile App Development", href: "#services" },
-          { label: "E-Commerce Development", href: "#services" },
-        ],
-      },
-      {
-        title: "Enterprise Solutions",
-        items: [
-          { label: "ERP & Business Automation", href: "#services" },
-          { label: "Products & Platforms", href: "#case-studies", badge: "Attendance Master" },
-          { label: "Business System Integration", href: "#services" },
-        ],
-      },
-      {
-        title: "AI & Cloud",
-        items: [
-          { label: "AI Development & Automation", href: "#services" },
-          { label: "Cloud Development & Maintenance", href: "#services" },
-          { label: "Data Management & Migration", href: "#services" },
-        ],
-      },
-      {
-        title: "Design & Growth",
-        items: [
-          { label: "UI/UX Design & Branding", href: "#services" },
-          { label: "Digital Marketing", href: "#services" },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Who We Are",
+    title: "About Us",
     groups: [
       {
         title: "Corporate Overview",
@@ -66,17 +29,17 @@ export const navigationData: NavMenu[] = [
             description: "Our mission to translate digital ideas into measurable enterprise impact.",
           },
           {
-            label: "Leadership & Team",
+            label: "Leadership & Standards",
             href: "#about",
             description: "Experienced technology leaders delivering precision software engineering.",
           },
           {
-            label: "Core Values",
+            label: "Core Values & Trust",
             href: "#why-choose-us",
-            description: "Built on Trust. Driven by Results. Long-term partnership focus.",
+            description: "Built on Trust. Driven by Results. Long-term engineering partnership.",
           },
           {
-            label: "Our Workflow",
+            label: "Engineering Workflow",
             href: "#workflow",
             description: "5-stage engineering lifecycle from Discovery to Global Scale.",
           },
@@ -85,7 +48,59 @@ export const navigationData: NavMenu[] = [
     ],
   },
   {
-    title: "Case Studies",
+    title: "Capabilities",
+    groups: [
+      {
+        title: "Digital Development",
+        items: [
+          { label: "Web Design & CMS", href: "#services" },
+          { label: "Custom Web Applications", href: "#services" },
+          { label: "Mobile App Development", href: "#services" },
+          { label: "E-Commerce Systems", href: "#services" },
+        ],
+      },
+      {
+        title: "Enterprise Solutions",
+        items: [
+          { label: "ERP & Business Automation", href: "#services" },
+          { label: "Products & Platforms", href: "#case-studies", badge: "Attendance Master" },
+          { label: "System Integration", href: "#services" },
+        ],
+      },
+      {
+        title: "AI & Cloud Architecture",
+        items: [
+          { label: "AI & Cognitive Automation", href: "#services" },
+          { label: "Cloud Development & DevOps", href: "#services" },
+          { label: "Data Management & Migration", href: "#services" },
+        ],
+      },
+      {
+        title: "Design & Growth",
+        items: [
+          { label: "UI/UX Design Systems", href: "#services" },
+          { label: "Digital Growth Strategy", href: "#services" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Industries",
+    groups: [
+      {
+        title: "Industry Verticals",
+        items: [
+          { label: "Financial Services & BFSI", href: "#why-choose-us" },
+          { label: "Retail & E-Commerce", href: "#why-choose-us" },
+          { label: "Manufacturing & Logistics", href: "#why-choose-us" },
+          { label: "Healthcare & Life Sciences", href: "#why-choose-us" },
+          { label: "Education & EdTech", href: "#why-choose-us" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Success Stories",
     href: "#case-studies",
   },
   {
@@ -95,25 +110,21 @@ export const navigationData: NavMenu[] = [
         title: "Thought Leadership",
         items: [
           {
-            label: "Customer Stories",
+            label: "Client Endorsements",
             href: "#testimonials",
             description: "Real-world client outcomes and strategic transformation results.",
           },
           {
-            label: "News & Tech Articles",
+            label: "Latest Thinking & Articles",
             href: "#insights",
-            description: "Industry insights on AI, cloud modernization, and e-commerce growth.",
+            description: "Industry analysis on AI, cloud scaling, and modern digital platforms.",
           },
         ],
       },
     ],
   },
   {
-    title: "Careers",
-    href: "#contact",
-  },
-  {
-    title: "Contact",
+    title: "Contact Us",
     href: "#contact",
   },
 ];

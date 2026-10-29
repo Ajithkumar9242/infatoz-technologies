@@ -1,0 +1,1046 @@
+{
+  "title": "Tech Mahindra | Scale at Speed",
+  "headerInfo": {
+    "tag": "HEADER",
+    "className": "navbar brand-40-visible sticky-top navbar-expand-xl mb-4 border-bottom shadow-sm",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 113,
+      "top": 0,
+      "right": 1440,
+      "bottom": 113,
+      "left": 0
+    },
+    "navLinks": [
+      {
+        "text": "Tech Mahindra",
+        "href": "https://www.techmahindra.com/",
+        "className": "navbar-brand"
+      },
+      {
+        "text": "Search Icon",
+        "href": "https://www.techmahindra.com/search/",
+        "className": "search-icon"
+      },
+      {
+        "text": "ABOUT US",
+        "href": "https://www.techmahindra.com/about-us/",
+        "className": "dropdown-toggle"
+      },
+      {
+        "text": "CAPABILITIES",
+        "href": "https://www.techmahindra.com/our-capabilities/",
+        "className": "dropdown-toggle"
+      },
+      {
+        "text": "INDUSTRIES",
+        "href": "https://www.techmahindra.com/industries/",
+        "className": "dropdown-toggle"
+      },
+      {
+        "text": "INSIGHTS",
+        "href": "https://www.techmahindra.com/insights/",
+        "className": "dropdown-toggle"
+      },
+      {
+        "text": "CAREERS",
+        "href": "https://www.techmahindra.com/careers/",
+        "className": "dropdown-toggle"
+      },
+      {
+        "text": "CONTACT US",
+        "href": "https://www.techmahindra.com/contact-us/",
+        "className": ""
+      },
+      {
+        "text": "SEARCH",
+        "href": "https://www.techmahindra.com/search/",
+        "className": "dropdown-toggle search-icon li-mobile-hide"
+      },
+      {
+        "text": "About Us",
+        "href": "https://www.techmahindra.com/about-us/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Corporate Overview",
+        "href": "https://www.techmahindra.com/about-us/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Leadership",
+        "href": "https://www.techmahindra.com/about-us/leadership/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Our Brand",
+        "href": "https://www.techmahindra.com/about-us/our-brand/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Sustainability",
+        "href": "https://www.techmahindra.com/about-us/sustainability/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Recognition",
+        "href": "https://www.techmahindra.com/awards/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Customer Speak",
+        "href": "https://www.techmahindra.com/about-us/customer-speak/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Partners Ecosystem",
+        "href": "https://www.techmahindra.com/alliance/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Portfolio Companies",
+        "href": "https://www.techmahindra.com/about-us/our-portfolio-companies/",
+        "className": "nav-link"
+      },
+      {
+        "text": "News",
+        "href": "https://www.techmahindra.com/insights/news/",
+        "className": "bottom-margin nav-link"
+      },
+      {
+        "text": "Investor Relations",
+        "href": "https://www.techmahindra.com/investors/",
+        "className": "bottom-margin nav-link"
+      },
+      {
+        "text": "Corporate Citizenship",
+        "href": "https://www.techmahindra.com/about-us/corporate-citizenship/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Tech Mahindra Foundation",
+        "href": "https://www.techmahindra.com/about-us/corporate-citizenship/tech-mahindra-foundation",
+        "className": "nav-link"
+      },
+      {
+        "text": "Mahindra Educational Institutions",
+        "href": "https://www.techmahindra.com/about-us/corporate-citizenship/mahindra-educational-institutions",
+        "className": "nav-link"
+      },
+      {
+        "text": "Individual Social Responsibility",
+        "href": "https://www.techmahindra.com/about-us/corporate-citizenship/individual-social-responsibilty",
+        "className": "nav-link"
+      },
+      {
+        "text": "Customer Centricity",
+        "href": "https://www.techmahindra.com/about-us/customer-centricity-office/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Capabilities",
+        "href": "https://www.techmahindra.com/our-capabilities/",
+        "className": "nav-link"
+      },
+      {
+        "text": "TechM Consulting",
+        "href": "https://www.techmahindra.com/services/techm-consulting/",
+        "className": "bottom-margin nav-link"
+      },
+      {
+        "text": "Application Services",
+        "href": "https://www.techmahindra.com/services/application-services/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Agentic Development and Modernization Services",
+        "href": "https://www.techmahindra.com/services/application-services/agentic-development-modernization-services/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Intelligent Automation",
+        "href": "https://www.techmahindra.com/services/application-services/intelligent-automation/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Testing Services",
+        "href": "https://www.techmahindra.com/services/application-services/testing-services/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Performance Engineering",
+        "href": "https://www.techmahindra.com/services/application-services/performance-engineering/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Cloud & Infrastructure Services",
+        "href": "https://www.techmahindra.com/services/cloud-infrastructure-services/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Cloud Consulting",
+        "href": "https://www.techmahindra.com/services/cloud-consulting-services/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Network Services",
+        "href": "https://www.techmahindra.com/services/network-services/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Cyber Security",
+        "href": "https://www.techmahindra.com/services/cyber-security/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Engineering Services",
+        "href": "https://www.techmahindra.com/services/engineering-services/",
+        "className": "bottom-margin nav-link"
+      },
+      {
+        "text": "Data Analytics",
+        "href": "https://www.techmahindra.com/services/data-analytics/",
+        "className": "bottom-margin nav-link"
+      },
+      {
+        "text": "Artificial Intelligence",
+        "href": "https://www.techmahindra.com/services/artificial-intelligence/",
+        "className": "bottom-margin nav-link"
+      },
+      {
+        "text": "Digital Enterprise Applications",
+        "href": "https://www.techmahindra.com/services/digital-enterprise-applications/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Microsoft Business Applications",
+        "href": "https://www.techmahindra.com/services/digital-enterprise-applications/microsoft-business-applications-services/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Enterprise Digital Solutions",
+        "href": "https://www.techmahindra.com/services/digital-enterprise-applications/enterprise-digital-solutions/",
+        "className": "nav-link"
+      },
+      {
+        "text": "SAP",
+        "href": "https://www.techmahindra.com/services/digital-enterprise-applications/sap/",
+        "className": "nav-link"
+      },
+      {
+        "text": "ServiceNow",
+        "href": "https://www.techmahindra.com/alliance/servicenow/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Oracle",
+        "href": "https://www.techmahindra.com/services/digital-enterprise-applications/oracle/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Salesforce",
+        "href": "https://www.techmahindra.com/services/digital-enterprise-applications/salesforce/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Pega",
+        "href": "https://www.techmahindra.com/services/digital-enterprise-applications/pega/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Business Process Services",
+        "href": "https://www.techmahindra.com/services/business-process-services/",
+        "className": "bottom-margin nav-link"
+      },
+      {
+        "text": "Experience Services",
+        "href": "https://www.techmahindra.com/services/experience-design/",
+        "className": "bottom-margin nav-link"
+      },
+      {
+        "text": "Integrated Offerings",
+        "href": "https://www.techmahindra.com/services/integrated-offerings/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Global Capability Centers",
+        "href": "https://www.techmahindra.com/services/integrated-offerings/techm-nextgengcc-offering/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Sustainability Services",
+        "href": "https://www.techmahindra.com/services/sustainability-services/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Products & Platforms",
+        "href": "https://www.techmahindra.com/products-and-platforms/",
+        "className": "bottom-margin nav-link"
+      },
+      {
+        "text": "Scale at Speed™",
+        "href": "https://www.techmahindra.com/scale-at-speed/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Innovation, R&D - Makers Lab",
+        "href": "https://www.techmahindra.com/makers-lab/",
+        "className": "bottom-margin nav-link"
+      },
+      {
+        "text": "Industries",
+        "href": "https://www.techmahindra.com/industries/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Banking & Financial Services",
+        "href": "https://www.techmahindra.com/industries/banking-financial-services/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Communications",
+        "href": "https://www.techmahindra.com/industries/communications/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Education",
+        "href": "https://www.techmahindra.com/industries/education/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Energy & Utilities",
+        "href": "https://www.techmahindra.com/industries/energy-and-utilities/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Healthcare & Life Sciences",
+        "href": "https://www.techmahindra.com/industries/healthcare-life-sciences/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Hi Tech",
+        "href": "https://www.techmahindra.com/industries/hi-tech/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Insurance",
+        "href": "https://www.techmahindra.com/industries/insurance/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Manufacturing",
+        "href": "https://www.techmahindra.com/industries/manufacturing/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Media & Entertainment",
+        "href": "https://www.techmahindra.com/industries/media-and-entertainment/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Oil & Gas",
+        "href": "https://www.techmahindra.com/industries/oil-and-gas/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Private Equity",
+        "href": "https://www.techmahindra.com/industries/private-equity/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Professional Services",
+        "href": "https://www.techmahindra.com/industries/professional-services/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Retail & Consumer Goods",
+        "href": "https://www.techmahindra.com/industries/retail-consumer-goods/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Travel, Transportation, Logistics & Hospitality",
+        "href": "https://www.techmahindra.com/industries/travel-transportation-logistics-hospitality/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Insights",
+        "href": "https://www.techmahindra.com/insights/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Case Studies",
+        "href": "https://www.techmahindra.com/insights/case-studies/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Views",
+        "href": "https://www.techmahindra.com/insights/views/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Whitepapers",
+        "href": "https://www.techmahindra.com/insights/whitepapers/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Analyst Insights",
+        "href": "https://www.techmahindra.com/insights/analyst-insights/",
+        "className": "nav-link"
+      },
+      {
+        "text": "News",
+        "href": "https://www.techmahindra.com/insights/news/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Events",
+        "href": "https://www.techmahindra.com/events/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Careers",
+        "href": "https://www.techmahindra.com/careers/",
+        "className": "nav-link"
+      },
+      {
+        "text": "The TechM Way",
+        "href": "https://www.techmahindra.com/careers/techm-way/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Diversity & Inclusion",
+        "href": "https://www.techmahindra.com/careers/diversity-inclusion/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Join Us",
+        "href": "https://careers.techmahindra.com/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Contact Us",
+        "href": "https://www.techmahindra.com/contact-us/",
+        "className": "nav-link"
+      },
+      {
+        "text": "Search",
+        "href": "https://www.techmahindra.com/search/",
+        "className": "search-icon li-mobile-hide nav-link search-icon li-mobile-hide"
+      },
+      {
+        "text": "English (Global)",
+        "href": "https://www.techmahindra.com/",
+        "className": "dropdown-item"
+      },
+      {
+        "text": "French (Canada)",
+        "href": "https://www.techmahindra.com/fr-ca/",
+        "className": "dropdown-item"
+      }
+    ]
+  },
+  "typography": {
+    "bodyFont": "Poppins, arial, sans-serif",
+    "h1Font": {
+      "font": "Poppins, arial, sans-serif",
+      "size": "52px",
+      "weight": "600",
+      "line": "62.4px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "h2Font": {
+      "font": "Poppins, arial, sans-serif",
+      "size": "52px",
+      "weight": "600",
+      "line": "62.4px",
+      "color": "rgb(255, 255, 255)"
+    }
+  },
+  "sections": [
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "dialog-off-canvas-main-canvas",
+      "rect": {
+        "top": 0,
+        "height": 7417.703125,
+        "width": 1440
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(0, 0, 0)",
+      "h1": [
+        "Celebrating 40 Years of Progress.\nThe Ascending Force."
+      ],
+      "h2": [
+        "The Bank of Tomorrow",
+        "Tech Mahindra Financial Results for Q2 FY27 Announced",
+        "Zero Gravity Telco Architecture™",
+        "Recognized Among the World's Most Sustainable Companies 2026",
+        "Ranked 4th Strongest Indian IT Services Brand by Brand Finance",
+        "Scale at Speed™\nwith Tech Mahindra",
+        "Sovereign AI: Why Collaboration Beats Control",
+        "Latest Thinking",
+        "Making Connectivity Matter",
+        "What's New",
+        "Capabilities",
+        "Expertise Across Industries",
+        "Success Stories",
+        "Limitless Together"
+      ],
+      "h3": [
+        "From AI Adoption to AI Advantage",
+        "Open Banking at an Inflection Point: Why Banks Must Act Now",
+        "Security by Design: A GenAI Model for Trust and Growth",
+        "Invisible AI: Enabling Frictionless Customer Experiences in Europe",
+        "Bold Moves in Prepaid: A New Growth Path for Developed Markets",
+        "Agentic AI for Oil and Gas Upstream Operations",
+        "Engineering Autonomous Enterprise",
+        "OIL & GAS",
+        "PRIVATE EQUITY",
+        "PROFESSIONAL SERVICES",
+        "RETAIL & CONSUMER GOODS",
+        "TRAVEL, TRANSPORTATION, LOGISTICS & HOSPITALITY",
+        "BANKING & FINANCIAL SERVICES",
+        "COMMUNICATIONS",
+        "EDUCATION",
+        "ENERGY & UTILITIES",
+        "HEALTHCARE & LIFE SCIENCES",
+        "HI TECH",
+        "INSURANCE",
+        "MANUFACTURING",
+        "MEDIA & ENTERTAINMENT",
+        "OIL & GAS",
+        "PRIVATE EQUITY",
+        "PROFESSIONAL SERVICES",
+        "RETAIL & CONSUMER GOODS",
+        "TRAVEL, TRANSPORTATION, LOGISTICS & HOSPITALITY",
+        "BANKING & FINANCIAL SERVICES",
+        "COMMUNICATIONS",
+        "EDUCATION",
+        "ENERGY & UTILITIES",
+        "HEALTHCARE & LIFE SCIENCES",
+        "HI TECH",
+        "INSURANCE",
+        "MANUFACTURING",
+        "MEDIA & ENTERTAINMENT",
+        "OIL & GAS",
+        "PRIVATE EQUITY",
+        "PROFESSIONAL SERVICES",
+        "RETAIL & CONSUMER GOODS",
+        "TRAVEL, TRANSPORTATION, LOGISTICS & HOSPITALITY"
+      ],
+      "sampleText": "ABOUT US CAPABILITIES INDUSTRIES INSIGHTS CAREERS CONTACT US SEARCH English (Global) Previous Next Celebrating 40 Years of Progress. The Ascending Force. EXPLORE NOW EXPLORE TECH MAHINDRA'S 40-YEAR JO"
+    },
+    {
+      "tag": "SECTION",
+      "id": "",
+      "className": "row region region-navigation-collapsible",
+      "rect": {
+        "top": 26,
+        "height": 77,
+        "width": 1350
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(0, 0, 0)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": "ABOUT US CAPABILITIES INDUSTRIES INSIGHTS CAREERS CONTACT US SEARCH English (Global)"
+    },
+    {
+      "tag": "DIV",
+      "id": "block-mainnavigation",
+      "className": "desktop-mega-menu settings-tray-editable block block-tb-megamenu block-tb-megamenu-menu-blockmain",
+      "rect": {
+        "top": 26,
+        "height": 77,
+        "width": 918
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(0, 0, 0)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": "ABOUT US CAPABILITIES INDUSTRIES INSIGHTS CAREERS CONTACT US SEARCH"
+    },
+    {
+      "tag": "DIV",
+      "id": "block-views-blockmega-menu-articles-block-1",
+      "className": "block block-views block-views-blockmega-menu-articles-block-1",
+      "rect": {
+        "top": 105,
+        "height": 560,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "mega-menu-articles view view-mega-menu-articles view-id-mega_menu_articles view-display-id-block_1 js-view-dom-id-1ceaadba7d72f4d3cf756c7e7ca515f241d5b6dd1235e5142718d447a725d238",
+      "rect": {
+        "top": 105,
+        "height": 560,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-image",
+      "rect": {
+        "top": 105,
+        "height": 280,
+        "width": 375
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(0, 0, 0)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-content",
+      "rect": {
+        "top": 105,
+        "height": 280,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-title",
+      "rect": {
+        "top": 130,
+        "height": 71.390625,
+        "width": 328.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "mega-body-text section-title",
+      "rect": {
+        "top": 307,
+        "height": 53,
+        "width": 328.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-image",
+      "rect": {
+        "top": 385,
+        "height": 280,
+        "width": 375
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(0, 0, 0)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-content",
+      "rect": {
+        "top": 385,
+        "height": 280,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "block-views-blockmega-menu-articles-block-3",
+      "className": "block block-views block-views-blockmega-menu-articles-block-3",
+      "rect": {
+        "top": 105,
+        "height": 560,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "mega-menu-articles view view-mega-menu-articles view-id-mega_menu_articles view-display-id-block_3 js-view-dom-id-2cd6b17de5f2b6189149fd383ddae1fe3e4ef5f5250e663b8cd5a3db01296d01",
+      "rect": {
+        "top": 105,
+        "height": 560,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-image",
+      "rect": {
+        "top": 105,
+        "height": 280,
+        "width": 375
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(0, 0, 0)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-content",
+      "rect": {
+        "top": 105,
+        "height": 280,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-title",
+      "rect": {
+        "top": 130,
+        "height": 71.390625,
+        "width": 328.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "mega-body-text section-title",
+      "rect": {
+        "top": 287,
+        "height": 73,
+        "width": 328.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-image",
+      "rect": {
+        "top": 385,
+        "height": 280,
+        "width": 375
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(0, 0, 0)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-content",
+      "rect": {
+        "top": 385,
+        "height": 280,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-title",
+      "rect": {
+        "top": 410,
+        "height": 71.390625,
+        "width": 328.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "mega-body-text section-title",
+      "rect": {
+        "top": 587,
+        "height": 53,
+        "width": 328.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "block-views-blockmega-menu-articles-block-2",
+      "className": "block block-views block-views-blockmega-menu-articles-block-2",
+      "rect": {
+        "top": 105,
+        "height": 560,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "mega-menu-articles view view-mega-menu-articles view-id-mega_menu_articles view-display-id-block_2 js-view-dom-id-e69a99ab2885304ef682dc0cb80842828f8984aa93c15c7cbf0494d9407d8c7f",
+      "rect": {
+        "top": 105,
+        "height": 560,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-image",
+      "rect": {
+        "top": 105,
+        "height": 280,
+        "width": 375
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(0, 0, 0)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-content",
+      "rect": {
+        "top": 105,
+        "height": 280,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-title",
+      "rect": {
+        "top": 130,
+        "height": 71.390625,
+        "width": 328.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "mega-body-text section-title",
+      "rect": {
+        "top": 227,
+        "height": 133,
+        "width": 328.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-image",
+      "rect": {
+        "top": 385,
+        "height": 280,
+        "width": 375
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-content",
+      "rect": {
+        "top": 385,
+        "height": 280,
+        "width": 388.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    },
+    {
+      "tag": "DIV",
+      "id": "",
+      "className": "section-title",
+      "rect": {
+        "top": 410,
+        "height": 71.390625,
+        "width": 328.796875
+      },
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgImg": "none",
+      "color": "rgb(23, 24, 26)",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "sampleText": ""
+    }
+  ],
+  "footerInfo": {
+    "className": "footer footer-main-container ",
+    "rect": {
+      "x": 0,
+      "y": 6938.484375,
+      "width": 1440,
+      "height": 479.21875,
+      "top": 6938.484375,
+      "right": 1440,
+      "bottom": 7417.703125,
+      "left": 0
+    },
+    "bg": "rgba(0, 0, 0, 0)",
+    "text": "Footer Menu Links 1\n\nOur Brand\nSustainability\nCorporate Citizenship\nInvestor Relations\nContact Us\n\nFooter Menu Links 2\n\nNews\nEvents\nCareers\nAlumni\nSitemap\nCookie Preferences\n    \nEnglish (Global)\n\n© 2026 Tech Mahindra Limited\n\nFooter\n\nTerms of Use\nAccessibility\nPrivacy\nCookie"
+  }
+}

@@ -13,7 +13,7 @@ export const testimonialsData: TestimonialItem[] = [
   {
     id: "vinishka-srilakshmi",
     name: "Vinishka Srilakshmi",
-    role: "Founder & President",
+    role: "Actress, Founder & President",
     organization: "Vinishka Infratech Projects LLP",
     quote: "We, Vinishka Infratech Projects LLP, have been using Infatoz services for the past one and a half years. They provide timely delivery and offer continuous follow-ups regarding day-to-day updates. Mr. Manjunath has been providing great support to deliver the best possible solutions for our company.",
     rating: 5,
@@ -35,7 +35,7 @@ export const testimonialsData: TestimonialItem[] = [
     name: "Prof. Mukund",
     role: "IT Administrator",
     organization: "Bhandarkars Arts & Science College, Kundapura",
-    quote: "We recently implemented the Attendance Master Software developed by Infatoz Technologies. It has greatly simplified our attendance process for both staff and students. The support team from Infatoz Technologies has been very responsive and helpful whenever we needed assistance.",
+    quote: "We recently implemented the Attendance Master Software developed by Infatoz technologies. It has greatly simplified our attendance process for both staff and students. The support team from Infatoz Technologies team has been very responsive and helpful whenever we needed assistance.",
     rating: 5,
     highlight: "Simplified Operations for Staff & Students with Rapid Response",
     imageUrl: "https://infatoz.com/wp-content/uploads/2025/11/portrait-of-happy-young-man-with-shirt-and-glasses.jpg",

@@ -1,0 +1,74 @@
+[
+  {
+    "viewport": "mobile-320",
+    "docWidth": 320,
+    "bodyWidth": 320,
+    "winWidth": 320,
+    "hasOverflow": false,
+    "offending": []
+  },
+  {
+    "viewport": "mobile-360",
+    "docWidth": 360,
+    "bodyWidth": 360,
+    "winWidth": 360,
+    "hasOverflow": false,
+    "offending": []
+  },
+  {
+    "viewport": "mobile-390",
+    "docWidth": 390,
+    "bodyWidth": 390,
+    "winWidth": 390,
+    "hasOverflow": false,
+    "offending": []
+  },
+  {
+    "viewport": "mobile-430",
+    "docWidth": 430,
+    "bodyWidth": 430,
+    "winWidth": 430,
+    "hasOverflow": false,
+    "offending": []
+  },
+  {
+    "viewport": "tablet-768",
+    "docWidth": 768,
+    "bodyWidth": 768,
+    "winWidth": 768,
+    "hasOverflow": false,
+    "offending": []
+  },
+  {
+    "viewport": "laptop-1024",
+    "docWidth": 1024,
+    "bodyWidth": 1024,
+    "winWidth": 1024,
+    "hasOverflow": false,
+    "offending": []
+  },
+  {
+    "viewport": "desktop-1280",
+    "docWidth": 1280,
+    "bodyWidth": 1280,
+    "winWidth": 1280,
+    "hasOverflow": false,
+    "offending": []
+  },
+  {
+    "viewport": "desktop-1440",
+    "docWidth": 1440,
+    "bodyWidth": 1440,
+    "winWidth": 1440,
+    "hasOverflow": false,
+    "offending": []
+  },
+  {
+    "viewport": "wide-1920",
+    "docWidth": 1920,
+    "bodyWidth": 1920,
+    "winWidth": 1920,
+    "hasOverflow": false,
+    "offending": []
+  }
+]

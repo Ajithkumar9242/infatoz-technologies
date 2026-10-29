@@ -2,74 +2,73 @@
 
 import React, { useState } from "react";
 import { servicesData, ServiceItem } from "@/content/servicesData";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ArrowUpRight, Check, Code2, Globe, Smartphone, Database, ShoppingBag, Palette, TrendingUp, Sparkles, Cloud, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Check, ArrowRight, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/Button";
 import { useCalendly } from "@/components/providers/CalendlyProvider";
-
-// Map service id to icon
-const iconMap: Record<string, React.ReactNode> = {
-  "web-design-cms": <Globe className="w-5 h-5 text-blue-600" />,
-  "custom-web-app": <Code2 className="w-5 h-5 text-indigo-600" />,
-  "mobile-app-development": <Smartphone className="w-5 h-5 text-sky-600" />,
-  "erp-automation-systems": <Database className="w-5 h-5 text-teal-600" />,
-  "ecommerce-development": <ShoppingBag className="w-5 h-5 text-amber-600" />,
-  "ui-ux-design-branding": <Palette className="w-5 h-5 text-purple-600" />,
-  "digital-marketing-growth": <TrendingUp className="w-5 h-5 text-rose-600" />,
-  "ai-applications-automation": <Sparkles className="w-5 h-5 text-cyan-600" />,
-  "cloud-dev-maintenance": <Cloud className="w-5 h-5 text-blue-600" />,
-  "data-management-migration": <Database className="w-5 h-5 text-emerald-600" />,
-};
 
 const categories = ["All Capabilities", "Development", "Enterprise", "Design & Marketing", "Cloud & AI"] as const;
 
 export const ServicesSection: React.FC = () => {
   const { openCalendly } = useCalendly();
   const [selectedCategory, setSelectedCategory] = useState<string>("All Capabilities");
+  const [activeServiceId, setActiveServiceId] = useState<string>(servicesData[0].id);
 
   const filteredServices = servicesData.filter((service) => {
     if (selectedCategory === "All Capabilities") return true;
     return service.category === selectedCategory;
   });
 
-  return (
-    <section id="services" className="py-20 md:py-28 bg-slate-50 border-b border-slate-200/80" aria-labelledby="services-heading">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <SectionHeading
-            eyebrow="What We Do"
-            title="Solutions That Power"
-            highlightText="Your Business"
-            description="We help you run your business smoothly with tech that fits — from modern custom web and mobile applications to full-scale enterprise automation and cloud management."
-          />
+  const activeService: ServiceItem =
+    servicesData.find((s) => s.id === activeServiceId) || filteredServices[0] || servicesData[0];
 
-          {/* Consultation Fast-track */}
-          <div className="shrink-0">
-            <button
-              type="button"
-              onClick={() => openCalendly()}
-              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 hover:text-white bg-white hover:bg-slate-900 border border-slate-300 hover:border-slate-900 px-6 py-3 rounded-sm shadow-sm transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
-            >
-              <span>Discuss Your Architecture</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+  return (
+    <section id="services" className="py-20 lg:py-28 bg-[#060b1e] text-white relative overflow-hidden border-b border-slate-900" aria-labelledby="capabilities-heading">
+      {/* Background ambient lighting */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Tech Mahindra Capabilities Top Header with Verbatim Infatoz Copy */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+          <div>
+            <div className="inline-flex items-center gap-2 mb-3">
+              <span className="w-2.5 h-2.5 bg-blue-500 rounded-none shrink-0" aria-hidden="true" />
+              <span className="text-xs font-extrabold tracking-[0.2em] text-blue-400 uppercase">
+                What We Do
+              </span>
+            </div>
+            <h2 id="capabilities-heading" className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08]">
+              Solutions That Power <br />
+              <span className="text-blue-400">Your Business</span>
+            </h2>
+          </div>
+
+          <div className="lg:max-w-xl">
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+              We help you run your business smoothly with tech that fits. From modern web & mobile applications to custom ERP systems, cloud infrastructure, and AI automation.
+            </p>
           </div>
         </div>
 
-        {/* Filter Navigation Pills */}
-        <div className="flex flex-wrap items-center gap-2 mb-10 pb-2 overflow-x-auto" role="tablist" aria-label="Services filter">
+        {/* Category Filter Pills */}
+        <div className="flex flex-wrap items-center gap-2 mb-10 pb-2 border-b border-slate-800" role="tablist" aria-label="Capabilities category filter">
           {categories.map((cat) => (
             <button
               key={cat}
               type="button"
               role="tab"
               aria-selected={selectedCategory === cat}
-              onClick={() => setSelectedCategory(cat)}
+              onClick={() => {
+                setSelectedCategory(cat);
+                const first = servicesData.find((s) => cat === "All Capabilities" || s.category === cat);
+                if (first) setActiveServiceId(first.id);
+              }}
               className={cn(
-                "px-5 py-2.5 min-h-[44px] inline-flex items-center rounded-sm text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 cursor-pointer",
+                "px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider rounded-sm transition-all cursor-pointer min-h-[44px]",
                 selectedCategory === cat
-                  ? "bg-slate-900 text-white shadow-sm border border-slate-900"
-                  : "bg-white text-slate-700 hover:text-slate-900 border border-slate-200/90 hover:bg-slate-100"
+                  ? "bg-blue-600 text-white shadow-md border border-blue-600"
+                  : "bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800"
               )}
             >
               {cat}
@@ -77,58 +76,126 @@ export const ServicesSection: React.FC = () => {
           ))}
         </div>
 
-        {/* 10 Services Editorial Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredServices.map((service: ServiceItem) => (
-            <div
-              key={service.id}
-              className="group bg-white rounded-sm border border-slate-200 hover:border-blue-600 p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
-            >
-              <div>
-                {/* Header: Number & Category Badge */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-sm bg-slate-50 border border-slate-200/80 flex items-center justify-center group-hover:scale-105 transition-transform">
-                    {iconMap[service.id]}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono font-bold text-slate-500">
+        {/* Tech Mahindra Interactive Split Capabilities Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column (5 cols): Interactive Capabilities List */}
+          <div className="lg:col-span-5 space-y-1.5" role="tablist" aria-orientation="vertical">
+            {filteredServices.map((service) => {
+              const isActive = activeService.id === service.id;
+              return (
+                <button
+                  key={service.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onMouseEnter={() => setActiveServiceId(service.id)}
+                  onClick={() => setActiveServiceId(service.id)}
+                  className={cn(
+                    "w-full text-left p-4 sm:p-5 rounded-sm transition-all duration-200 flex items-center justify-between group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500",
+                    isActive
+                      ? "bg-slate-900 border-l-4 border-blue-500 shadow-xl pl-6"
+                      : "bg-slate-950/40 hover:bg-slate-900/60 border-l-4 border-transparent text-slate-400 hover:text-white"
+                  )}
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span className={cn("text-xs font-mono font-bold shrink-0", isActive ? "text-sky-400" : "text-slate-600")}>
                       {service.number}
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded-sm border border-slate-200/80">
-                      {service.category}
+                    <span className="text-sm sm:text-base font-bold truncate group-hover:text-white transition-colors">
+                      {service.title}
                     </span>
                   </div>
-                </div>
+                  <ArrowRight
+                    className={cn(
+                      "w-4 h-4 shrink-0 transition-transform duration-200",
+                      isActive ? "text-blue-400 translate-x-1" : "text-slate-600 group-hover:text-slate-400"
+                    )}
+                  />
+                </button>
+              );
+            })}
+          </div>
 
-                {/* Service Title */}
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
-                  {service.title}
-                </h3>
+          {/* Right Column (7 cols): Grand Capability Showcase Preview Card */}
+          <div className="lg:col-span-7">
+            <div className="bg-slate-900/90 border border-slate-800 rounded-sm p-6 sm:p-10 shadow-2xl relative overflow-hidden backdrop-blur-sm">
+              {/* Dynamic Abstract Generative Graphic Pattern */}
+              <div className="absolute top-0 right-0 w-72 h-72 opacity-25 pointer-events-none" aria-hidden="true">
+                <svg viewBox="0 0 200 200" fill="none" className="w-full h-full">
+                  <path
+                    d="M10 190 C 80 120, 140 80, 190 10"
+                    stroke="#0284c7"
+                    strokeWidth="2"
+                    fill="none"
+                  />
+                  <path
+                    d="M30 190 C 95 130, 150 90, 195 25"
+                    stroke="#0047ab"
+                    strokeWidth="2.5"
+                    fill="none"
+                  />
+                  <path
+                    d="M50 190 C 110 140, 160 100, 200 40"
+                    stroke="#38bdf8"
+                    strokeWidth="1.5"
+                    fill="none"
+                  />
+                </svg>
+              </div>
 
-                {/* Authentic Short Description */}
-                <p className="text-sm text-slate-700 mt-2.5 leading-relaxed">
-                  {service.shortDescription}
-                </p>
-
-                {/* Core Deliverables list */}
-                <div className="mt-4 pt-4 border-t border-slate-100 space-y-1.5">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1">
-                    Key Deliverables
+              {/* Clean Header */}
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-6 border-b border-slate-800">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-mono font-bold text-sky-400 uppercase tracking-widest">
+                    {activeService.number}
                   </span>
-                  {service.deliverables.slice(0, 3).map((item) => (
-                    <div key={item} className="flex items-center gap-2 text-xs text-slate-800 font-medium">
-                      <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                  <span className="text-slate-600">·</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                    {activeService.category}
+                  </span>
+                </div>
+                <span className="text-xs text-slate-400">
+                  Infatoz Technology Service
+                </span>
+              </div>
+
+              {/* Service Title */}
+              <h3 className="text-2xl sm:text-3xl font-black text-white mt-6 tracking-tight">
+                {activeService.title}
+              </h3>
+
+              {/* Authentic Verbatim Description from infatoz.com */}
+              <p className="text-base text-slate-200 mt-4 leading-relaxed font-normal">
+                {activeService.shortDescription}
+              </p>
+
+              {/* Key Deliverables Checklist */}
+              <div className="mt-8 pt-6 border-t border-slate-800/80">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
+                  Key Capabilities & Deliverables
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {activeService.deliverables.map((item) => (
+                    <div key={item} className="flex items-center gap-2.5 text-xs text-slate-300">
+                      <div className="w-4 h-4 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                        <Check className="w-2.5 h-2.5" />
+                      </div>
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
+              </div>
 
-                {/* Technology Tags */}
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {service.technologies.slice(0, 4).map((tech) => (
+              {/* Core Technologies Tag Cloud */}
+              <div className="mt-6 pt-6 border-t border-slate-800/80">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
+                  Core Technologies & Frameworks
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {activeService.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="text-[11px] font-medium bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200/80"
+                      className="text-xs font-medium text-slate-300 bg-slate-800/80 border border-slate-700/80 px-3 py-1 rounded-sm"
                     >
                       {tech}
                     </span>
@@ -136,23 +203,30 @@ export const ServicesSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Bottom Direct CTA Action */}
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              {/* Actions */}
+              <div className="mt-8 pt-6 border-t border-slate-800 flex flex-wrap items-center gap-4">
+                <Button
+                  onClick={() => openCalendly()}
+                  variant="primary"
+                  size="md"
+                  className="rounded-sm font-extrabold uppercase tracking-wider text-xs px-6 py-3 shadow-lg"
+                >
+                  <Calendar className="w-4 h-4 mr-2" />
+                  <span>Get a Free Consultation</span>
+                </Button>
+
                 <a
-                  href={service.ctaUrl}
+                  href={activeService.ctaUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform"
-                  aria-label={`Learn more about ${service.title}`}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-white transition-colors px-3 py-2"
                 >
                   <span>Learn More</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  <ArrowUpRight className="w-4 h-4 text-sky-400" />
                 </a>
-
-                <span className="text-[11px] text-slate-500 font-medium">Enterprise Ready</span>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
