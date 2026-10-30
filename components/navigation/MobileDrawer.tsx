@@ -87,20 +87,14 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
           </Link>
 
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => {
-                onClose();
-                const el = document.getElementById("services");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-              }}
-              aria-label="Search Capabilities"
-              className="p-2 text-slate-700 hover:text-blue-600 cursor-pointer"
+            <a
+              href="#services"
+              onClick={onClose}
+              className="px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200/60 rounded-sm hover:bg-blue-100 transition-colors"
+              aria-label="Explore Capabilities"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
+              Capabilities
+            </a>
 
             <button
               ref={closeButtonRef}

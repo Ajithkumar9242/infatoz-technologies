@@ -41,7 +41,7 @@ export const DesktopMegaMenu: React.FC = () => {
     <nav
       ref={containerRef}
       onBlur={handleBlur}
-      className="flex items-center gap-1 xl:gap-2"
+      className="flex items-center gap-0.5 xl:gap-1 2xl:gap-2"
       aria-label="Main Navigation"
     >
       {navigationData.map((menu: NavMenu) => {
@@ -53,7 +53,7 @@ export const DesktopMegaMenu: React.FC = () => {
             <a
               key={menu.title}
               href={menu.href || "#"}
-              className="px-2.5 2xl:px-3.5 py-2 text-xs 2xl:text-[13px] font-bold uppercase tracking-wider text-slate-800 hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              className="px-2 xl:px-2.5 2xl:px-3.5 py-2 text-xs 2xl:text-[13px] font-bold uppercase tracking-wider text-slate-800 hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
             >
               {menu.title}
             </a>
@@ -65,7 +65,7 @@ export const DesktopMegaMenu: React.FC = () => {
         return (
           <div
             key={menu.title}
-            className="relative"
+            className="static"
             onMouseEnter={() => setActiveMenu(menu.title)}
             onMouseLeave={() => setActiveMenu(null)}
           >
@@ -75,7 +75,7 @@ export const DesktopMegaMenu: React.FC = () => {
               aria-expanded={isOpen}
               aria-haspopup="true"
               className={cn(
-                "px-2.5 2xl:px-3.5 py-2 text-xs 2xl:text-[13px] font-bold uppercase tracking-wider inline-flex items-center gap-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 cursor-pointer relative",
+                "px-2 xl:px-2.5 2xl:px-3.5 py-2 text-xs 2xl:text-[13px] font-bold uppercase tracking-wider inline-flex items-center gap-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 cursor-pointer relative",
                 isOpen
                   ? "text-slate-950 font-black"
                   : "text-slate-800 hover:text-blue-600"
@@ -88,16 +88,16 @@ export const DesktopMegaMenu: React.FC = () => {
               )}
             </button>
 
-            {/* Dropdown Menu */}
+            {/* Dropdown Menu - Anchored directly to header bottom via top-full */}
             {isOpen && (
               <div
                 className={cn(
-                  "fixed left-0 right-0 top-[73px] w-screen z-50 bg-white/98 backdrop-blur-md shadow-2xl border-t border-b border-slate-200 animate-in fade-in slide-in-from-top-1 duration-150"
+                  "absolute left-0 right-0 top-full w-full z-50 bg-white/98 backdrop-blur-md shadow-2xl border-t border-b border-slate-200 animate-in fade-in slide-in-from-top-1 duration-150"
                 )}
                 role="region"
                 aria-label={`${menu.title} Submenu`}
               >
-                <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
+                <div className="max-w-7xl min-[1440px]:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-8 py-10">
                   {menu.title === "Capabilities" ? (
                     <div>
                       {/* Top Row: Left Title + 3 Category Columns */}
